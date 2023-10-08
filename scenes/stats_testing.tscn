@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://151npb8pom2k"]
+
+[ext_resource type="Script" path="res://scripts/stats.gd" id="1_x4o1n"]
+[ext_resource type="SpriteFrames" uid="uid://c5p07enge8lae" path="res://sprites/player/player_placeholder.tres" id="2_261tm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ip7wp"]
+size = Vector2(8, 8)
+
+[node name="statsTesting" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(249, 95)
+script = ExtResource("1_x4o1n")
+
+[node name="Player" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_ip7wp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = ExtResource("2_261tm")
+animation = &"move"

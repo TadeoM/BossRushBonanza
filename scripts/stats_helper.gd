@@ -33,3 +33,20 @@ enum StatsEnum
 	STATS_COUNT
 }
 
+const StrengthCharacterCoreStats = {
+	StatsEnum.STRENGTH: 5,
+	StatsEnum.DEXTERITY: 3,
+	StatsEnum.INTELLIGENCE: 1
+}
+
+const DexterityCharacterCoreStats = {
+	StatsEnum.STRENGTH: 2,
+	StatsEnum.DEXTERITY: 5,
+	StatsEnum.INTELLIGENCE: 2
+}
+
+const IntelligenceCharacterCoreStats = {
+	StatsEnum.STRENGTH: 1,
+	StatsEnum.DEXTERITY: 3,
+	StatsEnum.INTELLIGENCE: 5
+}

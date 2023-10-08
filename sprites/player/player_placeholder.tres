@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://c5p07enge8lae"]
+
+[ext_resource type="Texture2D" uid="uid://bhwtyf1wuk7xs" path="res://sprites/player/player.png" id="1_wvaeu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcu1i"]
+atlas = ExtResource("1_wvaeu")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7svn5"]
+atlas = ExtResource("1_wvaeu")
+region = Rect2(9, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x07if"]
+atlas = ExtResource("1_wvaeu")
+region = Rect2(18, 0, 8, 8)
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcu1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7svn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x07if")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
