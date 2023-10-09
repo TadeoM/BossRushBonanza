@@ -1,11 +1,17 @@
 extends Node
 const StatHelperObject = preload("res://scripts/stats_helper.gd") # Relative path
 @onready var StatsEnum = StatHelperObject.new().StatsEnum
-@onready var ModifierTypeEnum = StatHelperObject.new().MODIFIER_TYPE
+@onready var ModifierTypeEnum = StatHelperObject.new().ModifierType
 
 var stats_enum_count: int
-var base_stat_values = {}
-var stat_modifiers_values = {}
+var base_stats = {
+	# key: int (StatsEnum)
+	# value: float (straight value)
+}
+var stat_modifiers_dictionary = {
+	# Key: int (StatsEnum)
+	# Value: Array of StatModifier (found in stats_helper.gd)
+}
 var max_stat_dictionary_stat_values = {}
 
 # Called when the node enters the scene tree for the first time.
@@ -14,37 +20,54 @@ func _ready():
 	for stat in StatsEnum:
 		if(StatsEnum[stat] == StatsEnum.STATS_COUNT):
 			continue
-		base_stat_values[StatsEnum[stat]] = StatsEnum[stat]
+		base_stats[StatsEnum[stat]] = StatsEnum[stat]
+		stat_modifiers_dictionary[StatsEnum[stat]] = []
 		var stat_name = StatsEnum.keys()[StatsEnum[stat]]
 		var returned_stat_value = getCurrentStatValue(StatsEnum[stat])
-		print(stat_name, " ", returned_stat_value)
+		#print(stat_name, " ", returned_stat_value)
 
-func getStrengthBasedStatValue(stat_enum_val):
-	var stat_name = StatsEnum.keys()[stat_enum_val]
-	return base_stat_values[stat_enum_val]
-
-func getDexterityBasedStatValue(stat_enum_val):
-	var stat_name = StatsEnum.keys()[stat_enum_val]
-	return base_stat_values[stat_enum_val]
-
-func getIntelligenceBasedStatValue(stat_enum_val):
-	var stat_name = StatsEnum.keys()[stat_enum_val]
-	return base_stat_values[stat_enum_val]
-
-func getCurrentStatValue(stat_enum_val):
-	var current_stat_value
+func getCoreStatValue(stat_enum_key):
+	var stat_name = StatsEnum.keys()[stat_enum_key]
+	var current_stat_value = base_stats[stat_enum_key]
 	
-	match stat_enum_val:
-		StatsEnum.STRENGTH, StatsEnum.HEALTH, StatsEnum.STAMINA_REGENERATION, StatsEnum.PHYSICAL_DEFENCE:
-			current_stat_value =  getStrengthBasedStatValue(stat_enum_val)
-		StatsEnum.DEXTERITY, StatsEnum.ATTACK_SPEED, StatsEnum.CRITICAL_HIT_CHANCE, StatsEnum.CRITICAL_HIT_DAMAGE_MODIFIER, StatsEnum.MOVEMENT_SPEED:
-			current_stat_value = getDexterityBasedStatValue(stat_enum_val)
-		StatsEnum.INTELLIGENCE, StatsEnum.MANA, StatsEnum.MANA_REGENERATION, StatsEnum.CAST_SPEED, StatsEnum.MAGICAL_DEFENCE:
-			current_stat_value = getIntelligenceBasedStatValue(stat_enum_val)
+	for modifier in stat_modifiers_dictionary[stat_enum_key]:
+		current_stat_value += modifier.stat_value
 	
 	return current_stat_value
 
+func getSubStatStatValue(stat_enum_key, core_stat_key):
+	var stat_name = StatsEnum.keys()[stat_enum_key]
+	var current_stat_value = base_stats[stat_enum_key] + getCoreStatValue(core_stat_key)
+	
+	for modifier in stat_modifiers_dictionary[stat_enum_key]:
+		current_stat_value += modifier.stat_value
+	
+	return current_stat_value 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func getCurrentStatValue(stat_enum_key):
+	var current_stat_value
+	
+	match stat_enum_key:
+		StatsEnum.STRENGTH, StatsEnum.DEXTERITY, StatsEnum.INTELLIGENCE, StatsEnum.LUCK, StatsEnum.VERSATILITY, StatsEnum.FAITH:
+			current_stat_value = getCoreStatValue(stat_enum_key)
+		StatsEnum.HEALTH, StatsEnum.DAMAGE_REDUCTION, StatsEnum.PHYSICAL_DAMAGE:
+			current_stat_value =  getSubStatStatValue(stat_enum_key, StatsEnum.STRENGTH)
+		StatsEnum.STAMINA, StatsEnum.STAMINA_REGEN, StatsEnum.RANGE_DAMAGE:
+			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.DEXTERITY)
+		StatsEnum.MANA, StatsEnum.MANA_REGENERATION, StatsEnum.SPELL_DAMAGE:
+			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.INTELLIGENCE)
+		StatsEnum.CRITICAL_HIT_CHANCE, StatsEnum.CRITICAL_MULTIPLIER, StatsEnum.MOVEMENT_SPEED:
+			current_stat_value =  getSubStatStatValue(stat_enum_key, StatsEnum.LUCK)
+		StatsEnum.DAMAGE, StatsEnum.ATTACK_SPEED:
+			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.VERSATILITY)
+		StatsEnum.RARITY, StatsEnum.DEFENSE, StatsEnum.RANGE:
+			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.FAITH)
+	
+	return current_stat_value
+
+func addStatModifier(stat_enum_key, stat_modifier):
+	stat_modifiers_dictionary[stat_enum_key].push_back(stat_modifier)
+	var stat_name = StatsEnum.keys()[stat_enum_key]
+	var dict_array_size = stat_modifiers_dictionary[stat_enum_key].size()
+	
+	#print(stat_name, " ", stat_modifiers_dictionary[stat_enum_key][dict_array_size-1].stat_value)
