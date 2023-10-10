@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://151npb8pom2k"]
-
-[ext_resource type="Script" path="res://scripts/stats.gd" id="1_dtodo"]
-
-[node name="statsTesting" type="Node2D"]
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(249, 95)
-script = ExtResource("1_dtodo")
