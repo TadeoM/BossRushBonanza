@@ -21,3 +21,5 @@ animation = &"move"
 
 [node name="PlayerStats" type="Node2D" parent="Player"]
 script = ExtResource("1_x4o1n")
+
+[node name="Testing" type="Node2D" parent="."]
