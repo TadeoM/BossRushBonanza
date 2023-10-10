@@ -15,7 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ig_spawn_item"):
-		#
+		# some comment
 		var newStat = StatHelperObject.StatModifier.new(self, rng.randi_range(0, StatsEnum.STATS_COUNT-1), rng.randi_range(1, 50), ModifierTypeEnum.FLAT_VALUE)
 		var stat_name = StatsEnum.keys()[newStat.stat_key]
 		player_stats.addStatModifier(newStat.stat_key, newStat)
