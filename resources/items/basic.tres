@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item_Scriptable" load_steps=2 format=3 uid="uid://be8oo0km1825p"]
+
+[ext_resource type="Script" path="res://scripts/items/item_scriptable.gd" id="1_48pro"]
+
+[resource]
+script = ExtResource("1_48pro")
+name = null
+stat_modifiers = {
+4: 5.0
+}

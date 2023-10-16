@@ -1,5 +1,5 @@
 extends Node
-const StatHelperObject = preload("res://scripts/stats_helper.gd") 
+const StatHelperObject = preload("res://scripts/Stats/stats_helper.gd") 
 @onready var StatsEnum = StatHelperObject.new().StatsEnum
 @onready var ModifierTypeEnum = StatHelperObject.new().ModifierType
 
@@ -10,6 +10,7 @@ var rng
 func _ready():
 	rng = RandomNumberGenerator.new()
 	player_stats = get_node('./PlayerStats')
+	player_stats = StatsEnum
 	#print(player_stats)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

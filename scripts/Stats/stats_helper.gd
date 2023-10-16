@@ -1,5 +1,4 @@
-extends Node
-
+class_name StatSystem
 enum ModifierType
 {
 	FLAT_VALUE,
@@ -45,7 +44,7 @@ enum StatsEnum
 	DEFENSE,
 	RANGE,
 	
-	STATS_COUNT
+	STATS_COUNT # count: 45
 }
 
 class StatModifier:

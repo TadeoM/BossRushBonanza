@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://151npb8pom2k"]
 
-[ext_resource type="Script" path="res://scripts/stats.gd" id="1_x4o1n"]
 [ext_resource type="SpriteFrames" uid="uid://c5p07enge8lae" path="res://sprites/player/player_placeholder.tres" id="2_261tm"]
 [ext_resource type="Script" path="res://scripts/player/player_controller.gd" id="2_gr4q1"]
+[ext_resource type="Script" path="res://scripts/Stats/stats.gd" id="3_1k860"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ip7wp"]
 size = Vector2(8, 8)
@@ -20,4 +20,4 @@ sprite_frames = ExtResource("2_261tm")
 animation = &"move"
 
 [node name="PlayerStats" type="Node2D" parent="Player"]
-script = ExtResource("1_x4o1n")
+script = ExtResource("3_1k860")

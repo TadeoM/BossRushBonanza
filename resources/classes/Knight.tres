@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dwcggukravp5w"]
+
+[ext_resource type="Script" path="res://scripts/player/class_scriptable.gd" id="1_ekhwv"]
+
+[resource]
+script = ExtResource("1_ekhwv")
+name = "Knight"
+core_stats = {
+0: 0,
+1: Vector2(0, 0)
+}

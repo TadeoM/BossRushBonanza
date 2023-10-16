@@ -1,7 +1,5 @@
 extends Node
-const StatHelperObject = preload("res://scripts/stats_helper.gd") # Relative path
-@onready var StatsEnum = StatHelperObject.new().StatsEnum
-@onready var ModifierTypeEnum = StatHelperObject.new().ModifierType
+@onready var StatsEnum = StatSystem.StatsEnum 
 
 var stats_enum_count: int
 var base_stats = {
