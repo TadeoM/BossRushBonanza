@@ -48,7 +48,7 @@ enum StatsEnum
 }
 
 class StatModifier:
-	var modifier_source : Node2D
+	var modifier_source
 	var stat_key : StatsEnum
 	var stat_value : float
 	var stat_type : ModifierType

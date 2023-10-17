@@ -1,5 +1,7 @@
 extends Node
-@onready var StatsEnum = StatSystem.StatsEnum 
+class_name Stats
+var StatsEnum = StatSystem.StatsEnum 
+var StatModifier = StatSystem.StatModifier 
 
 var stats_enum_count: int
 var base_stats = {
@@ -63,9 +65,9 @@ func getCurrentStatValue(stat_enum_key):
 	
 	return current_stat_value
 
-func addStatModifier(stat_enum_key, stat_modifier):
-	stat_modifiers_dictionary[stat_enum_key].push_back(stat_modifier)
-	var stat_name = StatsEnum.keys()[stat_enum_key]
-	var dict_array_size = stat_modifiers_dictionary[stat_enum_key].size()
+func addStatModifier(stat : StatSystem.StatModifier):
+	stat_modifiers_dictionary[stat.stat_key].push_back(stat)
+	var stat_name = StatsEnum.keys()[stat.stat_key]
+	var dict_array_size = stat_modifiers_dictionary[stat.stat_key].size()
 	
 	#print(stat_name, " ", stat_modifiers_dictionary[stat_enum_key][dict_array_size-1].stat_value)
