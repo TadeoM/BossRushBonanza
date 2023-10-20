@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item_Scriptable" load_steps=2 format=3 uid="uid://bkj54ginxeob5"]
+
+[ext_resource type="Script" path="res://scripts/items/item_scriptable.gd" id="1_tf55g"]
+
+[resource]
+script = ExtResource("1_tf55g")
+name = "item_name"
+stat_modifiers_keys = Array[int]([])
+stat_modifiers_values = Array[float]([])
+stat_modifiers_types = Array[int]([])

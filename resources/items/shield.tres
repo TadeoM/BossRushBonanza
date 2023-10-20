@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item_Scriptable" load_steps=3 format=3 uid="uid://be8oo0km1825p"]
+
+[ext_resource type="Texture2D" uid="uid://bu2fdq8aunbdx" path="res://sprites/icons/Common Item Placeholder - Armor Scrap Icon .png" id="1_t61rf"]
+[ext_resource type="Script" path="res://scripts/items/item_scriptable.gd" id="2_pp7pp"]
+
+[resource]
+script = ExtResource("2_pp7pp")
+name = "Shield"
+stackSize = 1
+stat_modifiers_keys = Array[int]([0])
+stat_modifiers_values = Array[float]([5.0])
+stat_modifiers_types = Array[int]([0])
+item_sprite = ExtResource("1_t61rf")
