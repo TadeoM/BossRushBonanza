@@ -19,7 +19,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("dev_random_stat"):
-		# some comment
 		var newStat = StatModifier.new(self, 0, 1, ModifierTypeEnum.FLAT_VALUE) # rng.randi_range(0, StatsEnum.STATS_COUNT-1)
 		var stat_name = StatsEnum.keys()[newStat.stat_key]
 		var old_stat_value = player_stats.getCurrentStatValue(newStat.stat_key)
