@@ -32,7 +32,7 @@ func get_stat_modifiers():
 
 	for stat in newStatModifierList:
 		print(StatSystem.StatsEnum.find_key(stat.stat_key), 
-	 		" ", stat.stat_value, "%" if stat.stat_type == StatSystem.ModifierType.PERCENTAGE_VALUE else "")
+	 		" ", stat.stat_value, "%" if stat.modifier_type == StatSystem.ModifierType.PERCENTAGE_VALUE else "")
 	return newStatModifierList
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

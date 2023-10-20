@@ -20,13 +20,15 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("dev_random_stat"):
 		# some comment
-		var newStat = StatModifier.new(self, rng.randi_range(0, StatsEnum.STATS_COUNT-1), rng.randi_range(1, 50), ModifierTypeEnum.FLAT_VALUE)
+		var newStat = StatModifier.new(self, 0, 1, ModifierTypeEnum.FLAT_VALUE) # rng.randi_range(0, StatsEnum.STATS_COUNT-1)
 		var stat_name = StatsEnum.keys()[newStat.stat_key]
+		var old_stat_value = player_stats.getCurrentStatValue(newStat.stat_key)
 		player_stats.addStatModifier(newStat)
-		#print(player_stats.getCurrentStatValue(newStat.stat_key))
+		var new_stat_value = player_stats.getCurrentStatValue(newStat.stat_key)
+		#print(stat_name, ": Old Value: ", old_stat_value, "->New Value: ", new_stat_value)
 
 	if Input.is_action_just_pressed("dev_spawn_item"):
 		inventory.add_item(testItem)
-		var stat_dictionary = inventory.get_stat_modifiers()#.map(func(stat): player_stats.addStatModifier(stat))
+		var stat_dictionary = inventory.get_stat_modifiers()
 		for stat in stat_dictionary:
 			player_stats.addStatModifier(stat_dictionary[stat])

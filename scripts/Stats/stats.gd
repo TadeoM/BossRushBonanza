@@ -1,6 +1,8 @@
 extends Node
 class_name Stats
+
 var StatsEnum = StatSystem.StatsEnum 
+var StatModifierType = StatSystem.ModifierType 
 var StatModifier = StatSystem.StatModifier 
 
 var stats_enum_count: int
@@ -22,27 +24,35 @@ func _ready():
 			continue
 		base_stats[StatsEnum[stat]] = StatsEnum[stat]
 		stat_modifiers_dictionary[StatsEnum[stat]] = []
-		var stat_name = StatsEnum.keys()[StatsEnum[stat]]
-		var returned_stat_value = getCurrentStatValue(StatsEnum[stat])
-		#print(stat_name, " ", returned_stat_value)
 
 func getCoreStatValue(stat_enum_key):
 	var stat_name = StatsEnum.keys()[stat_enum_key]
-	var current_stat_value = base_stats[stat_enum_key]
+	var flat_stat_value : float = 0
+	var percentage_stat_value : float = 0.0
 	
 	for modifier in stat_modifiers_dictionary[stat_enum_key]:
-		current_stat_value += modifier.stat_value
-	
-	return current_stat_value
+		var value = modifier.stat_value
+		match modifier.modifier_type:
+			StatModifierType.FLAT_VALUE:
+				flat_stat_value += modifier.stat_value
+			StatModifierType.PERCENTAGE_VALUE:
+				percentage_stat_value += modifier.stat_value
+		
+	return (base_stats[stat_enum_key] + flat_stat_value) * max(1.0, percentage_stat_value)
 
 func getSubStatStatValue(stat_enum_key, core_stat_key):
 	var stat_name = StatsEnum.keys()[stat_enum_key]
-	var current_stat_value = base_stats[stat_enum_key] + getCoreStatValue(core_stat_key)
-	
+	var flat_stat_value : float = getCoreStatValue(core_stat_key)
+	var percentage_stat_value : float = 0.0
+		
 	for modifier in stat_modifiers_dictionary[stat_enum_key]:
-		current_stat_value += modifier.stat_value
-	
-	return current_stat_value 
+		match modifier.modifier_type:
+			StatModifierType.FLAT_VALUE:
+				flat_stat_value += modifier.stat_value
+			StatModifierType.PERCENTAGE_VALUE:
+				percentage_stat_value += modifier.stat_value
+
+	return (base_stats[stat_enum_key] + flat_stat_value) * max(1.0, percentage_stat_value)
 
 func getCurrentStatValue(stat_enum_key):
 	var current_stat_value
@@ -51,13 +61,13 @@ func getCurrentStatValue(stat_enum_key):
 		StatsEnum.STRENGTH, StatsEnum.DEXTERITY, StatsEnum.INTELLIGENCE, StatsEnum.LUCK, StatsEnum.VERSATILITY, StatsEnum.FAITH:
 			current_stat_value = getCoreStatValue(stat_enum_key)
 		StatsEnum.HEALTH, StatsEnum.DAMAGE_REDUCTION, StatsEnum.PHYSICAL_DAMAGE:
-			current_stat_value =  getSubStatStatValue(stat_enum_key, StatsEnum.STRENGTH)
+			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.STRENGTH)
 		StatsEnum.STAMINA, StatsEnum.STAMINA_REGEN, StatsEnum.RANGE_DAMAGE:
 			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.DEXTERITY)
 		StatsEnum.MANA, StatsEnum.MANA_REGENERATION, StatsEnum.SPELL_DAMAGE:
 			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.INTELLIGENCE)
 		StatsEnum.CRITICAL_HIT_CHANCE, StatsEnum.CRITICAL_MULTIPLIER, StatsEnum.MOVEMENT_SPEED:
-			current_stat_value =  getSubStatStatValue(stat_enum_key, StatsEnum.LUCK)
+			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.LUCK)
 		StatsEnum.DAMAGE, StatsEnum.ATTACK_SPEED:
 			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.VERSATILITY)
 		StatsEnum.RARITY, StatsEnum.DEFENSE, StatsEnum.RANGE:
@@ -70,4 +80,4 @@ func addStatModifier(stat : StatSystem.StatModifier):
 	var stat_name = StatsEnum.keys()[stat.stat_key]
 	var dict_array_size = stat_modifiers_dictionary[stat.stat_key].size()
 	
-	#print(stat_name, " ", stat_modifiers_dictionary[stat_enum_key][dict_array_size-1].stat_value)
+	#print(stat_name, " ", stat_modifiers_dictionary[stat.stat_key][dict_array_size-1].stat_value)
