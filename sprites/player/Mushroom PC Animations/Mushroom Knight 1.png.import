@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bunuy0f5au0wh"
-path="res://.godot/imported/Frog_Knight_1.png-73f39c6e706967973cb09d34de3db9df.ctex"
+uid="uid://bjv4q2euueexc"
+path="res://.godot/imported/Mushroom Knight 1.png-f4d45ce404a8b3b03665de3d92b985eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/Archive/Frog_Knight_1.png"
-dest_files=["res://.godot/imported/Frog_Knight_1.png-73f39c6e706967973cb09d34de3db9df.ctex"]
+source_file="res://sprites/player/Mushroom PC Animations/Mushroom Knight 1.png"
+dest_files=["res://.godot/imported/Mushroom Knight 1.png-f4d45ce404a8b3b03665de3d92b985eb.ctex"]
 
 [params]
 

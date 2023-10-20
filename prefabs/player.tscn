@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b0y3r7u82hiy"]
 
 [ext_resource type="Script" path="res://scripts/player/player_controller.gd" id="1_toufl"]
-[ext_resource type="SpriteFrames" uid="uid://c5p07enge8lae" path="res://sprites/player/player_placeholder.tres" id="2_rvtpo"]
+[ext_resource type="SpriteFrames" uid="uid://c5p07enge8lae" path="res://sprites/player/Archive/player_placeholder.tres" id="2_rvtpo"]
 [ext_resource type="Script" path="res://scripts/Stats/stats.gd" id="3_8dffk"]
 [ext_resource type="Script" path="res://scripts/player/inventory.gd" id="4_inoyy"]
 
