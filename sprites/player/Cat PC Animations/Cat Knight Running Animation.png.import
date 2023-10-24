@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bunuy0f5au0wh"
-path="res://.godot/imported/Frog_Knight_1.png-73f39c6e706967973cb09d34de3db9df.ctex"
+uid="uid://bh0j240kiq2do"
+path="res://.godot/imported/Cat Knight Running Animation.png-bd5c969c999bdaed88c0716a946dc8f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/Archive/Frog_Knight_1.png"
-dest_files=["res://.godot/imported/Frog_Knight_1.png-73f39c6e706967973cb09d34de3db9df.ctex"]
+source_file="res://sprites/player/Cat PC Animations/Cat Knight Running Animation.png"
+dest_files=["res://.godot/imported/Cat Knight Running Animation.png-bd5c969c999bdaed88c0716a946dc8f9.ctex"]
 
 [params]
 

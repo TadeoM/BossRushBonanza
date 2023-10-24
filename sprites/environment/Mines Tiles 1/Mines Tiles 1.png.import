@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bunuy0f5au0wh"
-path="res://.godot/imported/Frog_Knight_1.png-73f39c6e706967973cb09d34de3db9df.ctex"
+uid="uid://c5aiw47vs3x4y"
+path="res://.godot/imported/Mines Tiles 1.png-646f782f1348520c673520c03f32ce2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/Archive/Frog_Knight_1.png"
-dest_files=["res://.godot/imported/Frog_Knight_1.png-73f39c6e706967973cb09d34de3db9df.ctex"]
+source_file="res://sprites/environment/Mines Tiles 1/Mines Tiles 1.png"
+dest_files=["res://.godot/imported/Mines Tiles 1.png-646f782f1348520c673520c03f32ce2a.ctex"]
 
 [params]
 

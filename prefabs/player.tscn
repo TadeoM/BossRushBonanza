@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0y3r7u82hiy"]
+
+[ext_resource type="Script" path="res://scripts/player/player_controller.gd" id="1_toufl"]
+[ext_resource type="SpriteFrames" uid="uid://c5p07enge8lae" path="res://sprites/player/Archive/player_placeholder.tres" id="2_rvtpo"]
+[ext_resource type="Script" path="res://scripts/Stats/stats.gd" id="3_8dffk"]
+[ext_resource type="Script" path="res://scripts/player/inventory.gd" id="4_inoyy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ip7wp"]
+size = Vector2(8, 8)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_toufl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ip7wp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_rvtpo")
+animation = &"move"
+
+[node name="PlayerStats" type="Node2D" parent="."]
+script = ExtResource("3_8dffk")
+
+[node name="Inventory" type="Node2D" parent="."]
+script = ExtResource("4_inoyy")

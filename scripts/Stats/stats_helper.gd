@@ -1,5 +1,4 @@
-extends Node
-
+class_name StatSystem
 enum ModifierType
 {
 	FLAT_VALUE,
@@ -45,20 +44,20 @@ enum StatsEnum
 	DEFENSE,
 	RANGE,
 	
-	STATS_COUNT
+	STATS_COUNT # count: 45
 }
 
 class StatModifier:
-	var modifier_source : Node2D
+	var modifier_source
 	var stat_key : StatsEnum
 	var stat_value : float
-	var stat_type : ModifierType
+	var modifier_type : ModifierType
 	
-	func _init(_modifier_source, _stat_key, _stat_value, _stat_type):
+	func _init(_modifier_source, _stat_key, _stat_value, _modifier_type):
 		modifier_source = _modifier_source
 		stat_key = _stat_key
 		stat_value = _stat_value
-		stat_type = _stat_type
+		modifier_type = _modifier_type
 
 const StrengthCharacterCoreStats = {
 	StatsEnum.STRENGTH: 5,
