@@ -1,0 +1,58 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://bk5nw5m44nayt"]
+
+[ext_resource type="Texture2D" uid="uid://cufcfudvwkwxa" path="res://sprites/player/Croc PC Animations/Croc Knight.png" id="1_ki7v6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdljp"]
+atlas = ExtResource("1_ki7v6")
+region = Rect2(2, 1, 18, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f27j"]
+atlas = ExtResource("1_ki7v6")
+region = Rect2(22, 3, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el1jg"]
+atlas = ExtResource("1_ki7v6")
+region = Rect2(41, 3, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rf23u"]
+atlas = ExtResource("1_ki7v6")
+region = Rect2(60, 3, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gdvi"]
+atlas = ExtResource("1_ki7v6")
+region = Rect2(3, 3, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ej4p"]
+atlas = ExtResource("1_ki7v6")
+region = Rect2(79, 3, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdljp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f27j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el1jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rf23u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gdvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ej4p")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}]

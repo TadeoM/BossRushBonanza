@@ -17,8 +17,8 @@ func execute(source, direction = null):
 		direction = (source.get_global_mouse_position() - source.position).normalized()
 	
 	print(direction)
-	self.position.x = direction.x * 6
-	self.position.y = direction.y * 6
+	self.position.x = direction.x * 15
+	self.position.y = direction.y * 15
 	hitbox.disabled = false
 	await get_tree().create_timer(animation_speed).timeout
 	hitbox.disabled = true

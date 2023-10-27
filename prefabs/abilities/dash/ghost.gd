@@ -12,7 +12,7 @@ func configure(source = null, my_direction = null, my_distance = null, my_speed 
 	direction = my_direction
 	distance = my_distance
 	speed = my_speed
-	look_at(source.position + my_direction)
+	#look_at(source.position + my_direction)
 
 func _physics_process(delta):
 	if (moved < distance):

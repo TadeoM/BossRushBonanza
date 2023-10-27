@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfgqim2ncs5a2"]
 
-[ext_resource type="Script" path="res://scenes/abilities/dash/ghost.gd" id="1_8bn1h"]
+[ext_resource type="Script" path="res://prefabs/abilities/dash/ghost.gd" id="1_8bn1h"]
 [ext_resource type="Texture2D" uid="uid://bu2fdq8aunbdx" path="res://sprites/icons/Common Item Placeholder - Armor Scrap Icon .png" id="2_db16l"]
 
 [node name="ghost" type="CharacterBody2D"]

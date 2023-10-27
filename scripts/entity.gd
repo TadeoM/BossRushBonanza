@@ -10,7 +10,7 @@ var StatModifier = StatSystem.StatModifier
 
 # onready vars
 @onready var inventory : Inventory = get_node('./Inventory')
-@onready var entity_stats : Stats = get_node('./PlayerStats')
+@onready var entity_stats : Stats = get_node('./Stats')
 @onready var sprite = $AnimatedSprite2D
 
 var movement = load_ability("movement")
@@ -49,7 +49,7 @@ func _physics_process(delta):
 		regen_mana()
 
 func load_ability(ability_name):
-	var scene = load("res://scenes/abilities/" + ability_name + "/" + ability_name + ".tscn")
+	var scene = load("res://prefabs/abilities/" + ability_name + "/" + ability_name + ".tscn")
 	var sceneNode = scene.instantiate()
 	add_child(sceneNode)
 	return sceneNode

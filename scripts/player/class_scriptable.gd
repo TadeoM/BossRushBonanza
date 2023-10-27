@@ -2,8 +2,7 @@ extends Resource
 class_name Class_Scriptable
 
 @export var name : String = "Knight"
-@export var core_stats = { 0: 1}
+@export var core_stats_keys : Array[StatSystem.StatsEnum]# index 
+@export var core_stats_values : Array[float] # index 
 @export var icon_image : Image
-@export var head_sprite : Sprite2D
-@export var body_sprite : Sprite2D
-
+@export var weapon : Weapon_Scriptable

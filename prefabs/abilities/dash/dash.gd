@@ -1,7 +1,7 @@
 extends Node
 class_name Dash
 
-var ghost = load("res://scenes/abilities/dash/ghost.tscn")
+var ghost = load("res://prefabs/abilities/dash/ghost.tscn")
 
 var distance = 60
 var speed = 200

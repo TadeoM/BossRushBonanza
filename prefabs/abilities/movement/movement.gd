@@ -16,7 +16,7 @@ func execute(source, dir):
 		source.velocity.y -= current_speed
 	elif (dir == "down"):
 		source.velocity.y += current_speed
-	if (dir == "left"):
+	elif (dir == "left"):
 		source.velocity.x -= current_speed
 	elif (dir == "right"):
 		source.velocity.x += current_speed

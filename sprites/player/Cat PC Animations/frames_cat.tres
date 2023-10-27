@@ -1,0 +1,81 @@
+[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://dhk24txcc2tsi"]
+
+[ext_resource type="Texture2D" uid="uid://bh0j240kiq2do" path="res://sprites/player/Cat PC Animations/Cat Knight Running Animation.png" id="1_6a810"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2k3hb"]
+atlas = ExtResource("1_6a810")
+region = Rect2(3, 3, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8sww"]
+atlas = ExtResource("1_6a810")
+region = Rect2(22, 3, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djd6w"]
+atlas = ExtResource("1_6a810")
+region = Rect2(41, 3, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1pkq"]
+atlas = ExtResource("1_6a810")
+region = Rect2(60, 3, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3u3o"]
+atlas = ExtResource("1_6a810")
+region = Rect2(79, 3, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65cpu"]
+atlas = ExtResource("1_6a810")
+region = Rect2(3, 22, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rijnb"]
+atlas = ExtResource("1_6a810")
+region = Rect2(22, 22, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuaim"]
+atlas = ExtResource("1_6a810")
+region = Rect2(41, 22, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tclo0"]
+atlas = ExtResource("1_6a810")
+region = Rect2(60, 22, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjy8e"]
+atlas = ExtResource("1_6a810")
+region = Rect2(79, 22, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2k3hb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8sww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djd6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1pkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3u3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65cpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rijnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuaim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tclo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjy8e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

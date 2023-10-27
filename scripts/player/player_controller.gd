@@ -4,6 +4,11 @@ extends Entity
 var dash = load_ability("dash")
 var sword_attack = load_ability("sword_attack")
 
+var attack_speed
+
+func _ready():
+	#attack_speed = entity_stats.getCurrentStatValue(StatsEnum.ATTACK_SPEED)
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _read_input():
