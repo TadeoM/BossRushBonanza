@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_tf55g")
 name = "item_name"
+stackSize = 1
 stat_modifiers_keys = Array[int]([])
 stat_modifiers_values = Array[float]([])
 stat_modifiers_types = Array[int]([])
