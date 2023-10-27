@@ -1,5 +1,5 @@
-extends CharacterBody2D
-class_name Ghost
+extends Area2D
+class_name SwordProjectile
 
 var direction = null
 var distance = null
@@ -23,10 +23,5 @@ func _physics_process(delta):
   
 func move():
 	moved += 1
-	velocity = Vector2()
-
-	velocity.x = direction.x
-	velocity.y = direction.y
-  
-	velocity = velocity.normalized() * speed
-	move_and_slide()
+	
+	self.position = direction * speed

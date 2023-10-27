@@ -1,4 +1,4 @@
-extends Node
+extends Ability
 class_name Movement
 
 var max_speed : float = 200

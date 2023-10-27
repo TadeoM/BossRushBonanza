@@ -1,11 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkmef2uqrriu4"]
+[gd_scene load_steps=14 format=3 uid="uid://cweocj3arq4bw"]
 
-[ext_resource type="Texture2D" uid="uid://c5aiw47vs3x4y" path="res://sprites/environment/Mines Tiles 1/Mines Tiles 1.png" id="1_hx8a1"]
-[ext_resource type="PackedScene" uid="uid://b0y3r7u82hiy" path="res://prefabs/player.tscn" id="1_m768a"]
-[ext_resource type="Texture2D" uid="uid://cqd6swctgfyj4" path="res://sprites/icons/c Glove.png" id="2_adu7a"]
+[ext_resource type="Texture2D" uid="uid://c5aiw47vs3x4y" path="res://sprites/environment/Mines Tiles 1/Mines Tiles 1.png" id="1_6la4l"]
+[ext_resource type="Texture2D" uid="uid://cqd6swctgfyj4" path="res://sprites/icons/c Glove.png" id="2_5cgeo"]
+[ext_resource type="PackedScene" uid="uid://b0y3r7u82hiy" path="res://prefabs/player.tscn" id="3_cw6ii"]
+[ext_resource type="SpriteFrames" uid="uid://6mawtr6u83qv" path="res://sprites/mobs/frames_enemy_bat.tres" id="4_jtfvu"]
+[ext_resource type="Resource" uid="uid://dwcggukravp5w" path="res://resources/classes/Knight.tres" id="4_ri242"]
+[ext_resource type="Script" path="res://scripts/mobs/dummy/dummy_entity.gd" id="4_wq3xr"]
+[ext_resource type="Resource" uid="uid://dq1ri7oilmnft" path="res://resources/mobs/dummy.tres" id="6_pvewo"]
+[ext_resource type="Script" path="res://scripts/player/health.gd" id="6_upfio"]
+[ext_resource type="Script" path="res://scripts/Stats/stats.gd" id="8_58ilx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_32uty"]
-texture = ExtResource("1_hx8a1")
+texture = ExtResource("1_6la4l")
 margins = Vector2i(3, 3)
 separation = Vector2i(3, 3)
 0:0/0 = 0
@@ -35,12 +41,15 @@ separation = Vector2i(3, 3)
 2:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qnfxf"]
-texture = ExtResource("2_adu7a")
+texture = ExtResource("2_5cgeo")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_beqi4"]
 sources/0 = SubResource("TileSetAtlasSource_32uty")
 sources/1 = SubResource("TileSetAtlasSource_qnfxf")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xexf"]
+size = Vector2(16, 13)
 
 [node name="root" type="Node2D"]
 
@@ -60,4 +69,26 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(4, 1, 0, 65539, 1, 0, 65540, 1, 0)
 
-[node name="Player" parent="." instance=ExtResource("1_m768a")]
+[node name="Player" parent="." instance=ExtResource("3_cw6ii")]
+class_scriptable = ExtResource("4_ri242")
+
+[node name="Dummy" type="CharacterBody2D" parent="."]
+position = Vector2(75, -30)
+collision_layer = 8
+collision_mask = 39
+script = ExtResource("4_wq3xr")
+mob_scriptable = ExtResource("6_pvewo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Dummy"]
+sprite_frames = ExtResource("4_jtfvu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dummy"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_5xexf")
+
+[node name="Health" type="Node2D" parent="Dummy"]
+script = ExtResource("6_upfio")
+
+[node name="Stats" type="Node2D" parent="Dummy"]
+position = Vector2(-75, 30)
+script = ExtResource("8_58ilx")

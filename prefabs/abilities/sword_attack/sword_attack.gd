@@ -1,29 +1,35 @@
-extends Area2D
-class_name SwordAttack
-@onready var hitbox = $CollisionShape2D
+extends Ability 
+class_name Sword_Attack
+@onready var sprite = $Sprite2D
 
-var range = 60
+var projectile = load("res://prefabs/abilities/sword_attack/sword_projectile.tscn")
+
+var range = 10
 var animation_speed = 0.25
 
 func _ready():
-	$".".body_entered.connect(self._on_body_enter)
-
-
-func _process(delta):
 	pass
 
-func execute(source, direction = null):
-	if (!direction): 
-		direction = (source.get_global_mouse_position() - source.position).normalized()
+func _process(delta):
+	var direction = (parent.get_global_mouse_position() - parent.position).normalized()
+	self.position.x = direction.x * range
+	self.position.y = direction.y * range
+	look_at(get_global_mouse_position())
+
+func execute(source, distance = null, speed = null, damage = null):
+	var direction = (source.get_global_mouse_position() - source.position).normalized()
 	
-	print(direction)
 	self.position.x = direction.x * 15
 	self.position.y = direction.y * 15
-	hitbox.disabled = false
+
+	var projectile_instance = projectile.instantiate()
+	projectile_instance.position.x = source.position.x + direction.x * 10
+	projectile_instance.position.y = source.position.y + direction.y * 10
+	get_tree().current_scene.add_child(projectile_instance)
+	projectile_instance.configure(source, direction, distance, speed, damage)
+	
 	await get_tree().create_timer(animation_speed).timeout
-	hitbox.disabled = true
 	self.position.x = 0
 	self.position.y = 0
 
-func _on_body_enter(body):
-	print("here")
+

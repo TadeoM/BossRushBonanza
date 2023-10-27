@@ -3,7 +3,9 @@ class_name Inventory
 
 var ItemTypes = ItemHelpers.ItemTypes
 
-var items = {}
+var items = {
+	
+}
 # var equipped_items = {}
 
 # Called when the node enters the scene tree for the first time.

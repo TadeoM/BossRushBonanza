@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="Weapon_Scriptable" load_steps=3 format=3 uid="uid://bbjv6opmwlr35"]
+[gd_resource type="Resource" script_class="Weapon_Scriptable" load_steps=2 format=3 uid="uid://bbjv6opmwlr35"]
 
-[ext_resource type="Script" path="res://prefabs/abilities/sword_attack/sword_attack.gd" id="1_2xm2e"]
 [ext_resource type="Script" path="res://scripts/items/weapon_scriptable.gd" id="1_08v2y"]
 
 [resource]
@@ -8,7 +7,6 @@ script = ExtResource("1_08v2y")
 base_damage_low = 1.0
 base_damage_high = 2.0
 base_attack_speed = 1.5
-attack_pattern = ExtResource("1_2xm2e")
 name = "item_name"
 stackSize = 1
 stat_modifiers_keys = Array[int]([])

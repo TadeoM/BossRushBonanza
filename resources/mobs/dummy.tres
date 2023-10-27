@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Mob_Scriptable" load_steps=2 format=3 uid="uid://dq1ri7oilmnft"]
+
+[ext_resource type="Script" path="res://scripts/mobs/Mob_scriptable.gd" id="1_f0wmw"]
+
+[resource]
+script = ExtResource("1_f0wmw")
+name = "Bat"
+core_stat_keys = Array[int]([6, 21])
+core_stat_values = Array[int]([-1, 5])
+held_items = Array[Resource("res://scripts/items/item_scriptable.gd")]([])
+possible_drops = Array[Resource("res://scripts/items/item_scriptable.gd")]([])

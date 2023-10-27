@@ -1,4 +1,5 @@
-extends Node
+extends Ability
+class_name Shoot_Attack
 
 func execute(source, dir = null):
 	source.velocity = Vector2()

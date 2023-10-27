@@ -1,4 +1,4 @@
-extends Node
+extends Ability
 class_name Dash
 
 var ghost = load("res://prefabs/abilities/dash/ghost.tscn")

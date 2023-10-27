@@ -22,8 +22,14 @@ func _ready():
 	for stat in StatsEnum:
 		if(StatsEnum[stat] == StatsEnum.STATS_COUNT):
 			continue
-		base_stats[StatsEnum[stat]] = StatsEnum[stat]
+		base_stats[StatsEnum[stat]] = 0
 		stat_modifiers_dictionary[StatsEnum[stat]] = []
+
+func init(stat_keys : Array[StatSystem.StatsEnum], stat_values : Array[int]):
+	for i in stat_keys.size()-1:
+		if(i == StatsEnum.STATS_COUNT):
+			continue
+		base_stats[i] = stat_values[i]
 
 func getCoreStatValue(stat_enum_key):
 	var stat_name = StatsEnum.keys()[stat_enum_key]

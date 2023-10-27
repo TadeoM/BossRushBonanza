@@ -1,9 +1,11 @@
 extends Entity
-
+@onready var health = $Health
+@export var mob_scriptable : Mob_Scriptable
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	entity_stats.init(mob_scriptable.core_stat_keys, mob_scriptable.core_stat_values)
+	health.init(entity_stats)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_ekhwv")
 name = "Knight"
-core_stats_keys = Array[int]([])
-core_stats_values = Array[float]([])
+core_stats_keys = Array[int]([0, 1, 2, 3, 4, 5])
+core_stats_values = Array[int]([5, 3, 1, 2, 2, 2])

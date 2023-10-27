@@ -15,15 +15,25 @@ func regen_health():
 		else: current_health += health_regen
 
 # Called when the node enters the scene tree for the first time.
-func init(stats):
+func init(stats : Stats):
 	current_health = stats.getCurrentStatValue(StatSystem.StatsEnum.HEALTH)
 	max_health = current_health * 3
-	armor = stats.getCurrentStatValue(StatSystem.StatsEnum.PHYSICAL_DAMAGE)
+	armor = stats.getCurrentStatValue(StatSystem.StatsEnum.DEFENSE)
+	print($"..".name + " Health: " + str(current_health))
 
 func apply_damage(amount):
-	if(armor > 0): amount = amount * ((100 - armor) * 0.01)
-	if(current_health > amount): current_health -= amount
-	else: print("death")
+	print("Original Damage: " + str(amount))
+	if(armor > 0):
+		amount = amount * ((100 - armor) * 0.01)
+		
+	print("After Armor: " + str(amount))
+	
+	if(current_health < 0):
+		current_health -= amount
+	elif(current_health > amount):
+		current_health -= amount
+	else: 
+		$"..".queue_free()
 
 func _process(delta):
 	timer += delta
