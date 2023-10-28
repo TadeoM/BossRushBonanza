@@ -19,12 +19,13 @@ func init(stats : Stats):
 	current_health = stats.getCurrentStatValue(StatSystem.StatsEnum.HEALTH)
 	max_health = current_health * 3
 	armor = stats.getCurrentStatValue(StatSystem.StatsEnum.DEFENSE)
-	print($"..".name + " Health: " + str(current_health))
+	print($"..".name + " Armor: " + str(armor))
 
 func apply_damage(amount):
 	print("Original Damage: " + str(amount))
 	if(armor > 0):
-		amount = amount * ((100 - armor) * 0.01)
+		var reductionFactor = max(0, ((100 - armor) * 0.01))
+		amount = amount * reductionFactor
 		
 	print("After Armor: " + str(amount))
 	

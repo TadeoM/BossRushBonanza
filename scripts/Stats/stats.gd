@@ -26,10 +26,10 @@ func _ready():
 		stat_modifiers_dictionary[StatsEnum[stat]] = []
 
 func init(stat_keys : Array[StatSystem.StatsEnum], stat_values : Array[int]):
-	for i in stat_keys.size()-1:
+	for i in stat_keys.size():
 		if(i == StatsEnum.STATS_COUNT):
 			continue
-		base_stats[i] = stat_values[i]
+		base_stats[stat_keys[i]] = stat_values[i]
 
 func getCoreStatValue(stat_enum_key):
 	var stat_name = StatsEnum.keys()[stat_enum_key]

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dgdjaffujc48y" path="res://sprites/weapons/c Greatsword.png" id="2_1a1ef"]
 
 [node name="sword_attack" type="Node2D"]
+rotation = -0.698132
 script = ExtResource("1_ch5n5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

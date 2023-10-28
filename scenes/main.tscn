@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkmef2uqrriu4"]
+[gd_scene load_steps=8 format=3 uid="uid://bkmef2uqrriu4"]
 
 [ext_resource type="Texture2D" uid="uid://c5aiw47vs3x4y" path="res://sprites/environment/Mines Tiles 1/Mines Tiles 1.png" id="1_hx8a1"]
 [ext_resource type="PackedScene" uid="uid://b0y3r7u82hiy" path="res://prefabs/player.tscn" id="1_m768a"]
 [ext_resource type="Texture2D" uid="uid://cqd6swctgfyj4" path="res://sprites/icons/c Glove.png" id="2_adu7a"]
+[ext_resource type="Resource" uid="uid://dwcggukravp5w" path="res://resources/classes/Knight.tres" id="4_afkcn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_32uty"]
 texture = ExtResource("1_hx8a1")
@@ -61,3 +62,4 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(4, 1, 0, 65539, 1, 0, 65540, 1, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_m768a")]
+class_scriptable = ExtResource("4_afkcn")

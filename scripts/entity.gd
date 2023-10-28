@@ -9,9 +9,10 @@ var StatModifier = StatSystem.StatModifier
 @onready var testItem : Item_Scriptable = preload("res://resources/items/shield.tres")
 
 # onready vars
-@onready var inventory : Inventory = get_node('./Inventory')
-@onready var entity_stats : Stats = get_node('./Stats')
-@onready var sprite = $AnimatedSprite2D
+@onready var inventory : Inventory = $Inventory
+@onready var entity_stats : Stats = $Stats
+@onready var health : Health = $Health
+@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 
 var movement = load_ability("movement")
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfgqim2ncs5a2"]
 
 [ext_resource type="Script" path="res://prefabs/abilities/dash/ghost.gd" id="1_8bn1h"]
-[ext_resource type="Texture2D" uid="uid://bnfrpb40el1vj" path="res://sprites/icons/Common Item Placeholder - Armor Scrap Icon .png" id="2_db16l"]
+[ext_resource type="Texture2D" uid="uid://babnaxepbl7ey" path="res://sprites/icons/common_armor_scrap.png" id="2_w3286"]
 
 [node name="ghost" type="CharacterBody2D"]
 collision_layer = 2
@@ -15,4 +15,4 @@ polygon = PackedVector2Array(7, -8, -11, -8, -7, 6, 0, 6)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2.38419e-07, 0)
 scale = Vector2(1.1, 1)
-texture = ExtResource("2_db16l")
+texture = ExtResource("2_w3286")

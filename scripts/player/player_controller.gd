@@ -10,6 +10,7 @@ var attack_speed
 
 func _ready():
 	entity_stats.init(class_scriptable.core_stats_keys, class_scriptable.core_stats_values)
+	health.init(entity_stats)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _read_input():
