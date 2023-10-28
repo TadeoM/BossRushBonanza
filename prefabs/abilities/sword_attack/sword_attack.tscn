@@ -1,14 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfs61afadyltw"]
 
 [ext_resource type="Script" path="res://prefabs/abilities/sword_attack/sword_attack.gd" id="1_ch5n5"]
-[ext_resource type="Texture2D" uid="uid://dgdjaffujc48y" path="res://sprites/weapons/c Greatsword.png" id="2_1a1ef"]
+[ext_resource type="Texture2D" uid="uid://7w2qxj5pgppo" path="res://sprites/weapons/weapon_sword.png" id="2_hi2ke"]
 
 [node name="sword_attack" type="Node2D"]
-rotation = -0.698132
 script = ExtResource("1_ch5n5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(0, -6)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_1a1ef")
+texture = ExtResource("2_hi2ke")

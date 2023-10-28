@@ -1,14 +1,18 @@
-[gd_resource type="Resource" script_class="Weapon_Scriptable" load_steps=2 format=3 uid="uid://bbjv6opmwlr35"]
+[gd_resource type="Resource" script_class="Weapon_Scriptable" load_steps=4 format=3 uid="uid://bbjv6opmwlr35"]
 
 [ext_resource type="Script" path="res://scripts/items/weapon_scriptable.gd" id="1_08v2y"]
+[ext_resource type="Script" path="res://prefabs/abilities/sword_attack/sword_attack.gd" id="1_vqr1g"]
+[ext_resource type="Texture2D" uid="uid://7w2qxj5pgppo" path="res://sprites/weapons/weapon_sword.png" id="2_yqfrl"]
 
 [resource]
 script = ExtResource("1_08v2y")
 base_damage_low = 1.0
 base_damage_high = 2.0
 base_attack_speed = 1.5
+attack_pattern = ExtResource("1_vqr1g")
 name = "item_name"
 stackSize = 1
 stat_modifiers_keys = Array[int]([])
 stat_modifiers_values = Array[float]([])
 stat_modifiers_types = Array[int]([])
+item_sprite = ExtResource("2_yqfrl")
