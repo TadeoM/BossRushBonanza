@@ -1,0 +1,58 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dpxrisia7eft5"]
+
+[ext_resource type="Texture2D" uid="uid://c5aiw47vs3x4y" path="res://sprites/environment/Mines Tiles 1/Mines Tiles 1.png" id="2_d26ro"]
+[ext_resource type="Texture2D" uid="uid://wnxqtu68bx3b" path="res://sprites/environment/Depth One/depth_one_tileset.png" id="2_vffmq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6die7"]
+texture = ExtResource("2_vffmq")
+separation = Vector2i(1, 1)
+0:0/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+3:1/0 = 0
+3:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6jsfp"]
+texture = ExtResource("2_d26ro")
+margins = Vector2i(3, 3)
+separation = Vector2i(3, 3)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+
+[resource]
+sources/3 = SubResource("TileSetAtlasSource_6die7")
+sources/4 = SubResource("TileSetAtlasSource_6jsfp")

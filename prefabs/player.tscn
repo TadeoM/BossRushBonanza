@@ -26,3 +26,6 @@ script = ExtResource("4_inoyy")
 
 [node name="Health" type="Node2D" parent="."]
 script = ExtResource("5_i61xp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
