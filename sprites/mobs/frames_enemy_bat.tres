@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://6mawtr6u83qv"]
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://6mawtr6u83qv"]
 
 [ext_resource type="Texture2D" uid="uid://dmnr7fw2ccbe1" path="res://sprites/mobs/Enemy_Bat.png" id="1_7yeae"]
 
@@ -11,6 +11,18 @@ atlas = ExtResource("1_7yeae")
 region = Rect2(17, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uais3"]
+atlas = ExtResource("1_7yeae")
+region = Rect2(34, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g14bn"]
+atlas = ExtResource("1_7yeae")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7nno"]
+atlas = ExtResource("1_7yeae")
+region = Rect2(17, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08ant"]
 atlas = ExtResource("1_7yeae")
 region = Rect2(34, 0, 16, 16)
 
@@ -28,5 +40,19 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g14bn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7nno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08ant")
+}],
+"loop": true,
+"name": &"walk_left",
 "speed": 5.0
 }]

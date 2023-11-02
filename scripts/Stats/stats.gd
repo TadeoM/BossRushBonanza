@@ -14,6 +14,7 @@ var stat_modifiers_dictionary = {
 	# Key: int (StatsEnum)
 	# Value: Array of StatModifier (found in stats_helper.gd)
 }
+
 var max_stat_dictionary_stat_values = {}
 
 # Called when the node enters the scene tree for the first time.
@@ -66,17 +67,17 @@ func getCurrentStatValue(stat_enum_key):
 	match stat_enum_key:
 		StatsEnum.STRENGTH, StatsEnum.DEXTERITY, StatsEnum.INTELLIGENCE, StatsEnum.LUCK, StatsEnum.VERSATILITY, StatsEnum.FAITH:
 			current_stat_value = getCoreStatValue(stat_enum_key)
-		StatsEnum.HEALTH, StatsEnum.DAMAGE_REDUCTION, StatsEnum.PHYSICAL_DAMAGE:
+		StatsEnum.HEALTH, StatsEnum.DEFENSE, StatsEnum.BURN_CHANCE:
 			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.STRENGTH)
-		StatsEnum.STAMINA, StatsEnum.STAMINA_REGEN, StatsEnum.RANGE_DAMAGE:
-			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.DEXTERITY)
-		StatsEnum.MANA, StatsEnum.MANA_REGENERATION, StatsEnum.SPELL_DAMAGE:
+		StatsEnum.MANA, StatsEnum.MANA_REGENERATION, StatsEnum.MAGIC_DEFENSE, StatsEnum.FREEZE_CHANCE:
 			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.INTELLIGENCE)
-		StatsEnum.CRITICAL_HIT_CHANCE, StatsEnum.CRITICAL_MULTIPLIER, StatsEnum.MOVEMENT_SPEED:
+		StatsEnum.STAMINA, StatsEnum.STAMINA_REGEN, StatsEnum.PHYS_DEFENSE, StatsEnum.THUNDER_CHANCE:
+			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.DEXTERITY)
+		StatsEnum.CRITICAL_HIT_CHANCE, StatsEnum.CRITICAL_MULTIPLIER, StatsEnum.MOVEMENT_SPEED, StatsEnum.ENFEEBLE_CHANCE:
 			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.LUCK)
-		StatsEnum.DAMAGE, StatsEnum.ATTACK_SPEED:
+		StatsEnum.DAMAGE, StatsEnum.HIT_POINTS, StatsEnum.BLEED_CHANCE:
 			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.VERSATILITY)
-		StatsEnum.RARITY, StatsEnum.DEFENSE, StatsEnum.RANGE:
+		StatsEnum.RARITY, StatsEnum.RANGE, StatsEnum.ATTACK_SPEED, StatsEnum.HOLY_BREAK:
 			current_stat_value = getSubStatStatValue(stat_enum_key, StatsEnum.FAITH)
 	
 	return current_stat_value

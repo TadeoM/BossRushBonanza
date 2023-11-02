@@ -9,10 +9,10 @@ var StatModifier = StatSystem.StatModifier
 @onready var testItem : Item_Scriptable = preload("res://resources/items/shield.tres")
 
 # onready vars
-@onready var inventory : Inventory = $Inventory
-@onready var entity_stats : Stats = $Stats
-@onready var health : Health = $Health
-@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var inventory : Inventory
+@onready var entity_stats : Stats
+@onready var health : Health
+@onready var animatedSprite : AnimatedSprite2D = $AnimatedSprite2D
 
 var movement = load_ability("movement")
 
@@ -26,10 +26,23 @@ var last_ability : int = 0
 
 var timer : int = 0
 
+func _init():
+	inventory = Inventory.new()
+	health = Health.new()
+	entity_stats = Stats.new()
+	
+	inventory.set_name("Inventory")
+	health.set_name("Health")
+	entity_stats.set_name("Stats")
+	
+	add_child(inventory)
+	add_child(health)
+	add_child(entity_stats)
 
 func _ready():
 	current_mana = entity_stats.getCurrentStatValue(StatsEnum.MANA)
 	max_mana = entity_stats.getCurrentStatValue(StatsEnum.MANA)
+	animatedSprite.play()
 
 func regen_mana():
 	if(current_mana < max_mana):

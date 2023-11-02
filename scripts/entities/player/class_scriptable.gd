@@ -1,5 +1,5 @@
 extends Resource
-class_name Class_Scriptable
+class_name PlayerClassScriptable
 
 @export var name : String = "Knight"
 @export var core_stats_keys : Array[StatSystem.StatsEnum]# index 

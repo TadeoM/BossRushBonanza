@@ -1,5 +1,5 @@
 extends Entity
-@export var class_scriptable : Class_Scriptable
+@export var player_class_scriptable : PlayerClassScriptable
 
 @onready var rng = RandomNumberGenerator.new()
 
@@ -9,8 +9,10 @@ var sword_attack = load_ability("sword_attack")
 var attack_speed
 
 func _ready():
-	entity_stats.init(class_scriptable.core_stats_keys, class_scriptable.core_stats_values)
+	super._ready()
+	entity_stats.init(player_class_scriptable.core_stats_keys, player_class_scriptable.core_stats_values)
 	health.init(entity_stats)
+	#print(entity_stats.getCurrentStatValue(StatSystem.StatsEnum.MOVEMENT_SPEED))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _read_input():
@@ -29,12 +31,16 @@ func _read_input():
 		var stat_dictionary = inventory.get_stat_modifiers()
 		for stat in stat_dictionary:
 			entity_stats.addStatModifier(stat_dictionary[stat])
-
-	if (Input.is_action_pressed("ig_up")): movement.execute(self, "up")
-	elif (Input.is_action_pressed("ig_down")): movement.execute(self, "down")
-	if (Input.is_action_pressed("ig_left")): movement.execute(self, "left")
-	elif (Input.is_action_pressed("ig_right")): movement.execute(self, "right")
-
+	
+	var dir = Vector2()
+	if (Input.is_action_pressed("ig_up")): dir += Vector2.UP
+	elif (Input.is_action_pressed("ig_down")): dir += Vector2.DOWN
+	if (Input.is_action_pressed("ig_left")): dir += Vector2.LEFT
+	elif (Input.is_action_pressed("ig_right")): dir += Vector2.RIGHT
+	
+	if dir.length() > 0:
+		movement.execute(self, dir.normalized())
+	
 	if (last_ability > global_cooldown):
 		if(Input.is_action_pressed("ig_dash")):
 			dash.execute(self)

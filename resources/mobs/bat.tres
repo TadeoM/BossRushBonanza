@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Mob_Scriptable" load_steps=5 format=3 uid="uid://d1xg65v3olmu0"]
 
-[ext_resource type="Script" path="res://scripts/mobs/Mob_scriptable.gd" id="1_xb3rs"]
+[ext_resource type="Script" path="res://scripts/entities/mobs/Mob_scriptable.gd" id="1_xb3rs"]
 [ext_resource type="Resource" uid="uid://be8oo0km1825p" path="res://resources/items/shield.tres" id="1_ymb0i"]
 [ext_resource type="Resource" uid="uid://bkj54ginxeob5" path="res://resources/items/test.tres" id="2_h4dol"]
 [ext_resource type="SpriteFrames" uid="uid://6mawtr6u83qv" path="res://sprites/mobs/frames_enemy_bat.tres" id="4_ikvll"]
@@ -9,7 +9,7 @@
 script = ExtResource("1_xb3rs")
 name = "Bat"
 core_stat_keys = Array[int]([0, 1, 2, 3, 4, 5])
-core_stat_values = Array[int]([5, 5, 5, 5, 5, 5])
+core_stat_values = Array[int]([1, 1, 1, 1, 1, 1])
 sprite = ExtResource("4_ikvll")
 held_items = Array[Resource("res://scripts/items/item_scriptable.gd")]([ExtResource("1_ymb0i")])
 possible_drops = Array[Resource("res://scripts/items/item_scriptable.gd")]([ExtResource("1_ymb0i"), ExtResource("2_h4dol")])

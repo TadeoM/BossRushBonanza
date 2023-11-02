@@ -1,126 +1,21 @@
-[gd_scene load_steps=18 format=3 uid="uid://cweocj3arq4bw"]
+[gd_scene load_steps=6 format=3 uid="uid://cweocj3arq4bw"]
 
-[ext_resource type="Texture2D" uid="uid://c5aiw47vs3x4y" path="res://sprites/environment/Mines Tiles 1/Mines Tiles 1.png" id="1_6la4l"]
-[ext_resource type="Script" path="res://scripts/player/camera.gd" id="1_7ijc2"]
-[ext_resource type="Texture2D" uid="uid://cqd6swctgfyj4" path="res://sprites/icons/c Glove.png" id="2_5cgeo"]
+[ext_resource type="PackedScene" uid="uid://dvbne5tkvaghr" path="res://prefabs/tile_map.tscn" id="1_bqo6n"]
 [ext_resource type="PackedScene" uid="uid://b0y3r7u82hiy" path="res://prefabs/player.tscn" id="3_cw6ii"]
-[ext_resource type="Texture2D" uid="uid://wnxqtu68bx3b" path="res://sprites/environment/Depth One/depth_one_tileset.png" id="3_ic2v2"]
-[ext_resource type="SpriteFrames" uid="uid://6mawtr6u83qv" path="res://sprites/mobs/frames_enemy_bat.tres" id="4_jtfvu"]
-[ext_resource type="Resource" uid="uid://dwcggukravp5w" path="res://resources/classes/Knight.tres" id="4_ri242"]
-[ext_resource type="Script" path="res://scripts/mobs/dummy/dummy_entity.gd" id="4_wq3xr"]
-[ext_resource type="Resource" uid="uid://dq1ri7oilmnft" path="res://resources/mobs/dummy.tres" id="6_pvewo"]
-[ext_resource type="Script" path="res://scripts/player/health.gd" id="6_upfio"]
-[ext_resource type="Script" path="res://scripts/Stats/stats.gd" id="8_58ilx"]
-[ext_resource type="Script" path="res://scripts/player/inventory.gd" id="10_4ycna"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_32uty"]
-texture = ExtResource("1_6la4l")
-margins = Vector2i(3, 3)
-separation = Vector2i(3, 3)
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-4:2/0 = 0
-3:2/0 = 0
-2:2/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-4:4/0 = 0
-3:4/0 = 0
-2:4/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qnfxf"]
-texture = ExtResource("2_5cgeo")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6die7"]
-texture = ExtResource("3_ic2v2")
-separation = Vector2i(1, 1)
-0:0/0 = 0
-1:0/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-3:1/0 = 0
-3:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-0:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-1:2/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_beqi4"]
-sources/0 = SubResource("TileSetAtlasSource_32uty")
-sources/1 = SubResource("TileSetAtlasSource_qnfxf")
-sources/3 = SubResource("TileSetAtlasSource_6die7")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xexf"]
-size = Vector2(16, 13)
+[ext_resource type="PackedScene" uid="uid://dr4g1o6ln5y28" path="res://prefabs/mobs/bat.tscn" id="3_hpyu8"]
+[ext_resource type="Resource" uid="uid://d1xg65v3olmu0" path="res://resources/mobs/bat.tres" id="4_iddxs"]
+[ext_resource type="Script" path="res://scripts/entities/mobs/behaviors/bat_entity.gd" id="4_ukosk"]
 
 [node name="root" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_beqi4")
-format = 2
-layer_0/name = "Ground"
-layer_0/tile_data = PackedInt32Array(131067, 65539, 2, 131068, 131075, 1, 65532, 65539, 2, 65533, 131075, 1, -3, 131075, 2, -4, 131075, 2, -65540, 131075, 1, -65541, 131075, 1, -131077, 65539, 2, -131078, 131075, 2, -65542, 65539, 2, -6, 131075, 1, 65530, 131075, 2, 131066, 65539, 1, 196602, 65539, 2, 196603, 131075, 1, 196604, 131075, 2, 196605, 131075, 2, 196606, 131075, 1, 131071, 131075, 1, 0, 131075, 2, 1, 65539, 1, -65535, 65539, 1, -65534, 65539, 2, -131070, 131075, 2, -196606, 131075, 2, -196607, 131075, 1, -196608, 65539, 2, -131073, 131075, 1, -131074, 65539, 1, -65539, 65539, 1, 262140, 65539, 3, 262141, 131075, 3, 262142, 65539, 3, 262143, 65539, 3, 196608, 65539, 3, 131073, 65539, 1, 65538, 131075, 1, 3, 65539, 2, 4, 65539, 1, -65532, 131075, 1, -131067, 65539, 1, -196603, 131075, 1, -196604, 131075, 1, -196605, 65539, 2, -65537, 65539, 2, -65538, 131075, 2, 65531, 131075, 1, 196607, 131075, 2, 131072, 131075, 2, 65537, 65539, 1, 2, 131075, 2, -131068, 131075, 2, -131069, 65539, 1, -131071, 65539, 1, -65536, 65539, 1, -1, 65539, 2, -2, 131075, 2, 131069, 131075, 1, 131070, 131075, 1, 65536, 65539, 1, -65533, 65539, 2, 65534, 131075, 2, -131072, 65539, 1, 65535, 131075, 2, -5, 65539, 2, -131076, 131075, 1, -65543, 131075, 2, -7, 65539, 1, 65529, 65539, 2, -196610, 65539, 1, -196611, 131075, 1, -196612, 131075, 1, -196613, 131075, 2, -196614, 65539, 1, -131079, 65539, 2, -65544, 131075, 2, -8, 65539, 1, -196615, 131075, 1, 131065, 131075, 1, 196601, 131075, 1, 262137, 131075, 3, 262138, 65539, 3, 262139, 65539, 3, 131074, 131075, 2, 131075, 131075, 1, 131076, 65539, 2, 65540, 65539, 2, 65541, 131075, 1, 65542, 131075, 2, 65543, 131075, 2, 7, 131075, 1, 8, 196611, 1, -65528, 196611, 1, -131064, 196611, 2, -196600, 196611, 1, -196601, 65539, 2, -262137, 65539, 1, -262138, 65539, 2, -327675, 131075, 1, -327676, 65539, 2, -327677, 131075, 2, -327678, 65539, 2, -327679, 131075, 2, -327680, 65539, 1, -262145, 131075, 1, -196609, 65539, 1, -131075, 131075, 1, -65531, 131075, 2, -131066, 131075, 2, -196602, 131075, 2, -262139, 65539, 2, -262146, 131075, 1, -9, 3, 2, 65527, 3, 1, 131063, 3, 2, 131064, 65539, 1, -327674, 131075, 2, -393212, 65539, 0, -262142, 131075, 2, -262143, 65539, 1, -262144, 65539, 1, -327687, 131075, 0, -327688, 131075, 0, -327689, 3, 0, -262153, 3, 2, -196617, 3, 1, -131081, 3, 1, -65545, 3, 2, -131080, 131075, 2, -196616, 65539, 1, -262152, 65539, 2, -262151, 131075, 2, -262150, 65539, 1, -327686, 131075, 0, -327685, 131075, 0, -262149, 65539, 1, -262148, 131075, 1, -327684, 131075, 0, -327683, 65539, 0, -262147, 65539, 2, -327682, 65539, 0, -327681, 131075, 0, -393216, 65539, 0, -393215, 131075, 0, -393214, 131075, 0, -393213, 131075, 0, 262136, 131075, 3, 196600, 65539, 1, 196599, 3, 1, 262135, 3, 3, 196613, 65539, 3, 131077, 65539, 2, 131078, 131075, 1, 196614, 131075, 3, 196615, 65539, 3, 131079, 65539, 1, 131080, 196611, 2, 65544, 196611, 1, 196616, 196611, 3, 196612, 131075, 3, 196611, 65539, 3, 196610, 65539, 3, 196609, 131075, 3, -65530, 65539, 1, 6, 131075, 1, 5, 131075, 2, -65529, 131075, 1, -131065, 131075, 2, 65539, 131075, 2, -262141, 65539, 1, -262140, 131075, 1, 65528, 131075, 1, -393210, 65539, 0, -393211, 131075, 0, -393209, 131075, 0, -327673, 65539, 1, -327672, 196611, 1, -393208, 196611, 0, -262136, 196611, 2)
-layer_1/name = "Objects"
-layer_1/enabled = true
-layer_1/modulate = Color(1, 1, 1, 1)
-layer_1/y_sort_enabled = false
-layer_1/y_sort_origin = 0
-layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(4, 1, 0, 65539, 1, 0, 65540, 1, 0)
+[node name="TileMap" parent="." instance=ExtResource("1_bqo6n")]
+show_behind_parent = true
+light_mask = 2
+visibility_layer = 2
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
-process_callback = 0
-script = ExtResource("1_7ijc2")
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("3_cw6ii")]
 
-[node name="Player" parent="." instance=ExtResource("3_cw6ii")]
-class_scriptable = ExtResource("4_ri242")
-
-[node name="Dummy" type="CharacterBody2D" parent="."]
-position = Vector2(75, -30)
-collision_layer = 8
-collision_mask = 39
-script = ExtResource("4_wq3xr")
-mob_scriptable = ExtResource("6_pvewo")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Dummy"]
-sprite_frames = ExtResource("4_jtfvu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dummy"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_5xexf")
-
-[node name="Health" type="Node2D" parent="Dummy"]
-script = ExtResource("6_upfio")
-
-[node name="Stats" type="Node2D" parent="Dummy"]
-position = Vector2(-75, 30)
-script = ExtResource("8_58ilx")
-
-[node name="Inventory" type="Node2D" parent="Dummy"]
-position = Vector2(-75, 30)
-script = ExtResource("10_4ycna")
-
-[connection signal="tree_exited" from="Dummy" to="Dummy" method="_on_tree_exited"]
+[node name="Bat" parent="." instance=ExtResource("3_hpyu8")]
+position = Vector2(42, -24)
+script = ExtResource("4_ukosk")
+mob_scriptable = ExtResource("4_iddxs")

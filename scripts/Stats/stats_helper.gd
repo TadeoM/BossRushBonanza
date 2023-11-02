@@ -1,4 +1,5 @@
 class_name StatSystem
+
 enum ModifierType
 {
 	FLAT_VALUE,
@@ -17,32 +18,37 @@ enum StatsEnum
 	
 # str-based
 	HEALTH,
-	PHYSICAL_DAMAGE,
-	DAMAGE_REDUCTION,
+	DEFENSE,
+	BURN_CHANCE,
 	
 # int-based
 	MANA,
 	MANA_REGENERATION,
-	SPELL_DAMAGE,
+	MAGIC_DEFENSE,
+	FREEZE_CHANCE,
 	
 # dex-based
 	STAMINA,
 	STAMINA_REGEN,
-	RANGE_DAMAGE,
+	PHYS_DEFENSE,
+	THUNDER_CHANCE,
 	
 # luck-based
 	CRITICAL_HIT_CHANCE,
 	CRITICAL_MULTIPLIER,	
 	MOVEMENT_SPEED,
+	ENFEEBLE_CHANCE,
 	
 # versatility-based
 	DAMAGE,
-	ATTACK_SPEED,
+	HIT_POINTS,
+	BLEED_CHANCE,
 	
 # faith-based
 	RARITY,
-	DEFENSE,
 	RANGE,
+	ATTACK_SPEED,
+	HOLY_BREAK,
 	
 	STATS_COUNT # count: 45
 }

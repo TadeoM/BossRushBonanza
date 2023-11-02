@@ -30,8 +30,6 @@ func move():
   
 	self.position += direction.normalized() * speed
 
-
-
 func _on_body_entered(body : Node2D):
 	if (body is Entity):
 		var health = body.get_node('./Health')
