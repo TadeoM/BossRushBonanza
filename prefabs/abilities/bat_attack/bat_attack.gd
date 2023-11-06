@@ -1,19 +1,23 @@
 extends Ability 
-class_name Sword_Attack
+class_name Bat_Attack
 @onready var sprite = $Sprite2D
 
-var projectile = load("res://prefabs/abilities/sword_attack/sword_projectile.tscn")
+var projectile = load("res://prefabs/abilities/bat_attack/bat_projectile.tscn")
+var target : Node2D
 
 var range : float = 10
 var isAnimating : bool = false
 var current_time : float = 0
 var animation_speed : float = 0.25
 
-func _ready():
-	pass
+func configure(source : Node2D, targ : Node2D = null):
+	super.configure(source)
+	target = targ
 
 func _process(delta):
-	var direction = (parent.get_global_mouse_position() - parent.position).normalized()
+	if !target: 
+		return
+	var direction = (target.position - parent.position).normalized()
 	self.position = direction * range
 
 	look_at(get_global_mouse_position())
@@ -35,7 +39,7 @@ func _process(delta):
 
 
 func execute(source, distance = null, speed = null, damage = null):
-	var direction = (source.get_global_mouse_position() - source.position).normalized()
+	var direction = (target.position - source.position).normalized()
 	
 	self.position.x = direction.x * 15
 	self.position.y = direction.y * 15

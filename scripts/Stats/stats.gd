@@ -34,7 +34,7 @@ func init(stat_keys : Array[StatSystem.StatsEnum], stat_values : Array[int]):
 
 func getCoreStatValue(stat_enum_key):
 	var stat_name = StatsEnum.keys()[stat_enum_key]
-	var flat_stat_value : float = 0
+	var flat_stat_value : float = base_stats[stat_enum_key]
 	var percentage_stat_value : float = 0.0
 	
 	for modifier in stat_modifiers_dictionary[stat_enum_key]:
@@ -49,7 +49,7 @@ func getCoreStatValue(stat_enum_key):
 
 func getSubStatStatValue(stat_enum_key, core_stat_key):
 	var stat_name = StatsEnum.keys()[stat_enum_key]
-	var flat_stat_value : float = getCoreStatValue(core_stat_key)
+	var flat_stat_value : float = getCoreStatValue(core_stat_key) + base_stats[stat_enum_key]
 	var percentage_stat_value : float = 0.0
 		
 	for modifier in stat_modifiers_dictionary[stat_enum_key]:

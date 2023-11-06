@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dvbne5tkvaghr" path="res://prefabs/tile_map.tscn" id="1_ejxrt"]
 [ext_resource type="PackedScene" uid="uid://b0y3r7u82hiy" path="res://prefabs/player.tscn" id="1_m768a"]
-[ext_resource type="PackedScene" uid="uid://b5hc8k0502r3s" path="res://prefabs/mobs/dummy.tscn" id="4_l6cbg"]
+[ext_resource type="PackedScene" uid="uid://b5hc8k0502r3s" path="res://prefabs/enemies/dummy.tscn" id="4_l6cbg"]
 
 [node name="root" type="Node2D"]
 

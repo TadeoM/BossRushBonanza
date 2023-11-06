@@ -1,5 +1,5 @@
-extends MobState
-class_name MobIdle
+extends EnemyState
+class_name EnemyIdle
 
 var player : CharacterBody2D
 var move_direction : Vector2
@@ -26,4 +26,4 @@ func Physics_Update(delta: float):
 	var direction = player.global_position - enemy.global_position
 	
 	if direction.length() < 100:
-		Transitioned.emit(self, "Follow")
+		transitioned.emit(self, "Follow")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmnr7fw2ccbe1"
-path="res://.godot/imported/Enemy_Bat.png-6baddcde28c16faf6e619685b7862456.ctex"
+uid="uid://cvawaa5qbvejo"
+path="res://.godot/imported/Wraith.png-288cdd0e2d0d7083125855dcc9072ff4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/mobs/Enemy_Bat.png"
-dest_files=["res://.godot/imported/Enemy_Bat.png-6baddcde28c16faf6e619685b7862456.ctex"]
+source_file="res://sprites/enemies/Wraith.png"
+dest_files=["res://.godot/imported/Wraith.png-288cdd0e2d0d7083125855dcc9072ff4.ctex"]
 
 [params]
 

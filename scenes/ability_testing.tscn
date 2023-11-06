@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cweocj3arq4bw"]
+[gd_scene load_steps=4 format=3 uid="uid://cweocj3arq4bw"]
 
 [ext_resource type="PackedScene" uid="uid://dvbne5tkvaghr" path="res://prefabs/tile_map.tscn" id="1_bqo6n"]
 [ext_resource type="PackedScene" uid="uid://b0y3r7u82hiy" path="res://prefabs/player.tscn" id="3_cw6ii"]
-[ext_resource type="PackedScene" uid="uid://dr4g1o6ln5y28" path="res://prefabs/mobs/bat.tscn" id="3_hpyu8"]
-[ext_resource type="Resource" uid="uid://d1xg65v3olmu0" path="res://resources/mobs/bat.tres" id="4_iddxs"]
-[ext_resource type="Script" path="res://scripts/entities/mobs/behaviors/bat_entity.gd" id="4_ukosk"]
+[ext_resource type="PackedScene" uid="uid://dr4g1o6ln5y28" path="res://prefabs/enemies/bat.tscn" id="3_hpyu8"]
 
 [node name="root" type="Node2D"]
 
@@ -17,5 +15,3 @@ visibility_layer = 2
 
 [node name="Bat" parent="." instance=ExtResource("3_hpyu8")]
 position = Vector2(42, -24)
-script = ExtResource("4_ukosk")
-mob_scriptable = ExtResource("4_iddxs")

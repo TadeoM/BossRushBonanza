@@ -68,3 +68,7 @@ func load_ability(ability_name):
 	add_child(sceneNode)
 	sceneNode.configure(self)
 	return sceneNode
+
+func _on_death(source):
+	#print("I DIED")
+	pass

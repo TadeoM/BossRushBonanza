@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvawaa5qbvejo"
-path="res://.godot/imported/Wraith.png-ecad107f468ae3d4810e24417fb518f4.ctex"
+uid="uid://b0njuynwekxip"
+path="res://.godot/imported/Skeleton 1.png-5ca679d0eab1ed685e99a9486506e5ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/mobs/Wraith.png"
-dest_files=["res://.godot/imported/Wraith.png-ecad107f468ae3d4810e24417fb518f4.ctex"]
+source_file="res://sprites/enemies/Skeleton 1.png"
+dest_files=["res://.godot/imported/Skeleton 1.png-5ca679d0eab1ed685e99a9486506e5ec.ctex"]
 
 [params]
 

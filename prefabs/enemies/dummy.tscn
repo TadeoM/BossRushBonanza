@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/entities/mobs/behaviors/dummy_entity.gd" id="1_bo28v"]
 [ext_resource type="Resource" uid="uid://dq1ri7oilmnft" path="res://resources/mobs/dummy.tres" id="2_v8hmt"]
-[ext_resource type="SpriteFrames" uid="uid://6mawtr6u83qv" path="res://sprites/mobs/frames_enemy_bat.tres" id="3_y7fqn"]
+[ext_resource type="SpriteFrames" uid="uid://6mawtr6u83qv" path="res://sprites/enemies/frames_enemy_bat.tres" id="3_y7fqn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oc05x"]
 
@@ -11,7 +11,7 @@ position = Vector2(108, -54)
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_bo28v")
-mob_scriptable = ExtResource("2_v8hmt")
+enemy_scriptable = ExtResource("2_v8hmt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_oc05x")

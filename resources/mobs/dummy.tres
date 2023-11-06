@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="Mob_Scriptable" load_steps=3 format=3 uid="uid://dq1ri7oilmnft"]
+[gd_resource type="Resource" script_class="Enemy_Scriptable" load_steps=3 format=3 uid="uid://dq1ri7oilmnft"]
 
-[ext_resource type="Script" path="res://scripts/entities/mobs/Mob_scriptable.gd" id="1_f0wmw"]
-[ext_resource type="SpriteFrames" uid="uid://6mawtr6u83qv" path="res://sprites/mobs/frames_enemy_bat.tres" id="2_c4nhk"]
+[ext_resource type="Script" path="res://scripts/entities/mobs/enemy_scriptable.gd" id="1_f0wmw"]
+[ext_resource type="SpriteFrames" uid="uid://6mawtr6u83qv" path="res://sprites/enemies/frames_enemy_bat.tres" id="2_c4nhk"]
 
 [resource]
 script = ExtResource("1_f0wmw")
@@ -11,3 +11,4 @@ core_stat_values = Array[int]([100000, 5])
 sprite = ExtResource("2_c4nhk")
 held_items = Array[Resource("res://scripts/items/item_scriptable.gd")]([])
 possible_drops = Array[Resource("res://scripts/items/item_scriptable.gd")]([])
+attack_pattern = ""

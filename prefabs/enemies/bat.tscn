@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dr4g1o6ln5y28"]
 
-[ext_resource type="Script" path="res://scripts/entities/mobs/behaviors/dummy_entity.gd" id="1_3crgm"]
-[ext_resource type="Resource" uid="uid://dq1ri7oilmnft" path="res://resources/mobs/dummy.tres" id="2_wsvne"]
-[ext_resource type="SpriteFrames" uid="uid://6mawtr6u83qv" path="res://sprites/mobs/frames_enemy_bat.tres" id="3_bckob"]
+[ext_resource type="Script" path="res://scripts/entities/mobs/behaviors/bat_entity.gd" id="1_0s4rk"]
+[ext_resource type="Resource" uid="uid://d1xg65v3olmu0" path="res://resources/mobs/bat.tres" id="2_75xho"]
+[ext_resource type="SpriteFrames" uid="uid://6mawtr6u83qv" path="res://sprites/enemies/frames_enemy_bat.tres" id="3_r4ota"]
 [ext_resource type="Script" path="res://scripts/entities/states/state_machine.gd" id="4_31y1s"]
-[ext_resource type="Script" path="res://scripts/entities/states/mobs/MobIdle.gd" id="5_rstgx"]
-[ext_resource type="Script" path="res://scripts/entities/states/mobs/MobFollow.gd" id="6_8tvsk"]
+[ext_resource type="Script" path="res://scripts/entities/states/enemies/EnemyIdle.gd" id="5_gtgvk"]
+[ext_resource type="Script" path="res://scripts/entities/states/enemies/bat/BatFollow.gd" id="6_r0koj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oc05x"]
 
@@ -13,23 +13,23 @@
 position = Vector2(108, -54)
 collision_layer = 8
 collision_mask = 0
-script = ExtResource("1_3crgm")
-mob_scriptable = ExtResource("2_wsvne")
+script = ExtResource("1_0s4rk")
+enemy_scriptable = ExtResource("2_75xho")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_oc05x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("3_bckob")
+sprite_frames = ExtResource("3_r4ota")
 
 [node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_31y1s")
 initial_state = NodePath("Follow")
 
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
-script = ExtResource("5_rstgx")
+script = ExtResource("5_gtgvk")
 enemy = NodePath("../..")
 
 [node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
-script = ExtResource("6_8tvsk")
+script = ExtResource("6_r0koj")
 enemy = NodePath("../..")

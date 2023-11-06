@@ -4,7 +4,7 @@ class_name Weapon_Scriptable
 @export var base_damage_low : float = 1.0
 @export var base_damage_high : float = 2.0
 @export var base_attack_speed : float = 1.5
-@export var attack_pattern : Script
+@export var attack_pattern : String
 
 # create a class that can be inheritted from for attack pattern, IE: how to spawn particles, and hitboxes
 # class_name Attack_Pattern

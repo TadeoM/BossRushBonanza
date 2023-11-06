@@ -11,7 +11,7 @@ var attack_speed
 func _ready():
 	super._ready()
 	entity_stats.init(player_class_scriptable.core_stats_keys, player_class_scriptable.core_stats_values)
-	health.init(entity_stats)
+	health.init(self, entity_stats)
 	#print(entity_stats.getCurrentStatValue(StatSystem.StatsEnum.MOVEMENT_SPEED))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -52,3 +52,7 @@ func _read_input():
 func _physics_process(delta):
 	super._physics_process(delta)
 	_read_input()
+
+func _on_death(source):
+	#print("player died")
+	super._on_death(source)

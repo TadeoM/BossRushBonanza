@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://tu34i4t36ats"]
+
+[ext_resource type="Script" path="res://prefabs/abilities/sword_attack/sword_projectile.gd" id="1_l6jh3"]
+[ext_resource type="Texture2D" uid="uid://cv66pawugjaum" path="res://sprites/icons/common_magma_tear.png" id="2_3sh2k"]
+
+[node name="root" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_l6jh3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(2, 2)
+polygon = PackedVector2Array(7, -8, -11, -8, -7, 6, 0, 6)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, 0)
+scale = Vector2(1.1, 1)
+texture = ExtResource("2_3sh2k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

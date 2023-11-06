@@ -14,7 +14,6 @@ func execute(source, dir : Vector2):
 	max_speed = current_speed * 3
 	source.velocity = Vector2()
 	source.velocity = dir * current_speed
-	print(source.name + " Speed: (" + str(source.velocity.length()))
 	
 	if source.animatedSprite:
 		source.animatedSprite.play("walk_left")
