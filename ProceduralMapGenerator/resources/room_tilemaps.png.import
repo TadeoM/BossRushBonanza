@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c343d242aco0o"
-path="res://.godot/imported/room_tilemaps.png-00d828e3d0da68d7a2635d110882c110.ctex"
+path="res://.godot/imported/room_tilemaps.png-dc9c80731649c0a75bbd749ad3dab2e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/resources/room_tilemaps.png"
-dest_files=["res://.godot/imported/room_tilemaps.png-00d828e3d0da68d7a2635d110882c110.ctex"]
+source_file="res://ProceduralMapGenerator/resources/room_tilemaps.png"
+dest_files=["res://.godot/imported/room_tilemaps.png-dc9c80731649c0a75bbd749ad3dab2e2.ctex"]
 
 [params]
 

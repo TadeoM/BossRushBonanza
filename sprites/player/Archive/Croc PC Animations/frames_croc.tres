@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://bk5nw5m44nayt"]
 
-[ext_resource type="Texture2D" uid="uid://cufcfudvwkwxa" path="res://sprites/player/Croc PC Animations/Croc Knight.png" id="1_ki7v6"]
+[ext_resource type="Texture2D" uid="uid://cufcfudvwkwxa" path="res://sprites/player/Archive/Croc PC Animations/Croc Knight.png" id="1_ki7v6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rdljp"]
 atlas = ExtResource("1_ki7v6")

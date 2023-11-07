@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/entities/player/player_controller.gd" id="1_toufl"]
 [ext_resource type="Resource" uid="uid://dwcggukravp5w" path="res://resources/classes/Knight.tres" id="2_8ua13"]
-[ext_resource type="SpriteFrames" uid="uid://bk5nw5m44nayt" path="res://sprites/player/Croc PC Animations/frames_croc.tres" id="2_bj6bi"]
+[ext_resource type="SpriteFrames" uid="uid://bk5nw5m44nayt" path="res://sprites/player/Archive/Croc PC Animations/frames_croc.tres" id="2_bj6bi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ip7wp"]
 size = Vector2(8, 8)
@@ -18,4 +18,4 @@ shape = SubResource("RectangleShape2D_ip7wp")
 sprite_frames = ExtResource("2_bj6bi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(0.5, 0.5)

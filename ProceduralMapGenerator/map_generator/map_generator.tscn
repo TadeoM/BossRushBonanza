@@ -1,25 +1,22 @@
 [gd_scene load_steps=6 format=3 uid="uid://dyux2g53g0eoo"]
 
-[ext_resource type="TileSet" uid="uid://6qw2njg2vsa6" path="res://main/resources/map_generator.tres" id="1_j13j0"]
-[ext_resource type="Script" path="res://main/map_generator/map_generator.gd" id="2_uhxcg"]
-[ext_resource type="Script" path="res://main/map_generator/draw_path.gd" id="3_lgdg0"]
-[ext_resource type="PackedScene" uid="uid://crfmts8vvxs4a" path="res://main/map_generator/path_marker.tscn" id="4_h5yif"]
-[ext_resource type="PackedScene" uid="uid://b0y3r7u82hiy" path="res://prefabs/player.tscn" id="5_muyyd"]
+[ext_resource type="TileSet" uid="uid://6qw2njg2vsa6" path="res://ProceduralMapGenerator/resources/map_generator.tres" id="1_jqcgj"]
+[ext_resource type="Script" path="res://ProceduralMapGenerator/map_generator/map_generator.gd" id="2_c3t3g"]
+[ext_resource type="Script" path="res://ProceduralMapGenerator/map_generator/draw_path.gd" id="3_m6iyr"]
+[ext_resource type="PackedScene" uid="uid://crfmts8vvxs4a" path="res://ProceduralMapGenerator/map_generator/path_marker.tscn" id="4_hvorj"]
+[ext_resource type="PackedScene" uid="uid://b0y3r7u82hiy" path="res://prefabs/player.tscn" id="5_in03a"]
 
 [node name="Tilemap" type="TileMap" node_paths=PackedStringArray("draw_path")]
-tile_set = ExtResource("1_j13j0")
+tile_set = ExtResource("1_jqcgj")
 cell_quadrant_size = 80
 format = 2
-script = ExtResource("2_uhxcg")
-map_size = 200
+script = ExtResource("2_c3t3g")
+map_size = 300
 draw_path = NodePath("DrawPath")
 batch_size = 5
 
 [node name="DrawPath" type="Node2D" parent="."]
-script = ExtResource("3_lgdg0")
-icon = ExtResource("4_h5yif")
+script = ExtResource("3_m6iyr")
+icon = ExtResource("4_hvorj")
 
-[node name="Player" parent="." instance=ExtResource("5_muyyd")]
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(3, 3)
+[node name="Player" parent="." instance=ExtResource("5_in03a")]

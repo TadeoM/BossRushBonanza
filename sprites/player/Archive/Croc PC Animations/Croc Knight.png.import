@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cufcfudvwkwxa"
-path="res://.godot/imported/Croc Knight.png-0f21eb0b0b345c0e68d19d0d35f194fc.ctex"
+path="res://.godot/imported/Croc Knight.png-d7afc386f6a98a3d830484c8310bd66a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/Croc PC Animations/Croc Knight.png"
-dest_files=["res://.godot/imported/Croc Knight.png-0f21eb0b0b345c0e68d19d0d35f194fc.ctex"]
+source_file="res://sprites/player/Archive/Croc PC Animations/Croc Knight.png"
+dest_files=["res://.godot/imported/Croc Knight.png-d7afc386f6a98a3d830484c8310bd66a.ctex"]
 
 [params]
 
