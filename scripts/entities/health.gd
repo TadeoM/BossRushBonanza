@@ -29,13 +29,13 @@ func apply_damage(amount):
 		var reductionFactor = max(0, ((100 - armor) * 0.01))
 		amount = amount * reductionFactor
 		
-	#print("After Armor: " + str(amount))
+	print("After Armor: " + str(amount))
 	
+	if(current_health > 0):
+		current_health -= amount
+	
+	print(current_health)
 	if(current_health < 0):
-		current_health -= amount
-	elif(current_health > amount):
-		current_health -= amount
-	else: 
 		death_signal.emit(self)
 
 func _process(delta):

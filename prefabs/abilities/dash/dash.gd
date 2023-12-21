@@ -10,7 +10,6 @@ var cooldown = 5
 func execute(source, direction = null):
 	if (!direction): 
 		direction = (source.get_global_mouse_position() - source.position).normalized()
-	var look_at = source.get_global_mouse_position()
 	speed = source.entity_stats.getCurrentStatValue(StatSystem.StatsEnum.MOVEMENT_SPEED)
 
 	var ghost_instance = ghost.instantiate()

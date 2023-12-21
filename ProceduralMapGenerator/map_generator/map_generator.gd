@@ -281,7 +281,7 @@ func manipulate_map(cell: Vector2i, room_selection: Array):
 	####################################################################
 	
 	# sample 1: prevents the map from branching more than 10 branching paths per iteration
-	if rooms_expected_next_iteration > 10:
+	if rooms_expected_next_iteration > 2:
 		force_spawn_closing_room(parent_direction, room_selection)
 	# sample 2: prevents the map from having less than 4 branching paths per iteration
 	if rooms_expected_next_iteration > 4:
@@ -407,8 +407,6 @@ func select_random_element(array: Array):
 	return selected_element
 
 
-
-
 #####################################
 # FUNCTIONS TO MANAGE CLOSING ROOMS #
 #####################################
@@ -471,3 +469,4 @@ func set_closing_room_as_non_expandable(room):
 	expandable_closing_rooms_by_depth[cell_depth[room]].erase(room)
 	if expandable_closing_rooms_by_depth[cell_depth[room]].is_empty():
 		expandable_closing_rooms_by_depth.erase(cell_depth[room])
+

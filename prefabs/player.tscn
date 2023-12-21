@@ -5,17 +5,19 @@
 [ext_resource type="SpriteFrames" uid="uid://bk5nw5m44nayt" path="res://sprites/player/Archive/Croc PC Animations/frames_croc.tres" id="2_bj6bi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ip7wp"]
-size = Vector2(8, 8)
+size = Vector2(15, 16)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 64
 script = ExtResource("1_toufl")
 player_class_scriptable = ExtResource("2_8ua13")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_ip7wp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_bj6bi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.2, 0.2)

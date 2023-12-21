@@ -5,7 +5,7 @@ extends Entity
 func _ready():
 	super._ready()
 	entity_stats.init(enemy_scriptable.core_stat_keys, enemy_scriptable.core_stat_values)
-	health.init(entity_stats)
+	health.init(self, entity_stats)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

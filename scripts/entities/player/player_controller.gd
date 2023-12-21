@@ -1,5 +1,6 @@
 extends Entity
 @export var player_class_scriptable : PlayerClassScriptable
+@export_range(0.5, 5) var camera_zoom : float
 
 @onready var rng = RandomNumberGenerator.new()
 
@@ -10,8 +11,11 @@ var attack_speed
 
 func _ready():
 	super._ready()
+	movement = load_ability("movement")
 	entity_stats.init(player_class_scriptable.core_stats_keys, player_class_scriptable.core_stats_values)
 	health.init(self, entity_stats)
+	$Camera2D.zoom = Vector2(camera_zoom, camera_zoom)
+	
 	#print(entity_stats.getCurrentStatValue(StatSystem.StatsEnum.MOVEMENT_SPEED))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,5 +58,11 @@ func _physics_process(delta):
 	_read_input()
 
 func _on_death(source):
-	#print("player died")
-	super._on_death(source)
+	print("player died")
+	#super._on_death(source)
+	pass
+
+func _on_body_entered(body : Node2D):
+	if (body is TileMap):
+		print("collided with " + body.name)
+

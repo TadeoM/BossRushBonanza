@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Enemy_Spawner_Scriptable" load_steps=2 format=3 uid="uid://bvjkt65cwkh1f"]
+
+[ext_resource type="Script" path="res://scripts/entities/mobs/spawners/enemy_spawner_scriptable.gd" id="1_10sjw"]
+
+[resource]
+script = ExtResource("1_10sjw")
+biome = 0
+spawn_count_spawn = 1
+tier = 1

@@ -1,17 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cweocj3arq4bw"]
+[gd_scene load_steps=3 format=3 uid="uid://cweocj3arq4bw"]
 
-[ext_resource type="PackedScene" uid="uid://dvbne5tkvaghr" path="res://prefabs/tile_map.tscn" id="1_bqo6n"]
 [ext_resource type="PackedScene" uid="uid://b0y3r7u82hiy" path="res://prefabs/player.tscn" id="3_cw6ii"]
 [ext_resource type="PackedScene" uid="uid://dr4g1o6ln5y28" path="res://prefabs/enemies/bat.tscn" id="3_hpyu8"]
 
 [node name="root" type="Node2D"]
 
-[node name="TileMap" parent="." instance=ExtResource("1_bqo6n")]
-show_behind_parent = true
-light_mask = 2
-visibility_layer = 2
-
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("3_cw6ii")]
+position = Vector2(1, 0)
+camera_zoom = 0.5
 
 [node name="Bat" parent="." instance=ExtResource("3_hpyu8")]
-position = Vector2(42, -24)
+position = Vector2(1, -24)

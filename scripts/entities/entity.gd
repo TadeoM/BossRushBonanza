@@ -14,7 +14,7 @@ var StatModifier = StatSystem.StatModifier
 @onready var health : Health
 @onready var animatedSprite : AnimatedSprite2D = $AnimatedSprite2D
 
-var movement = load_ability("movement")
+var movement
 
 var max_mana : int = 100
 var current_mana : int = 100 
@@ -70,5 +70,4 @@ func load_ability(ability_name):
 	return sceneNode
 
 func _on_death(source):
-	#print("I DIED")
-	pass
+	queue_free()

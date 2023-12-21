@@ -10,9 +10,9 @@ var isAnimating : bool = false
 var current_time : float = 0
 var animation_speed : float = 0.25
 
-func configure(source : Node2D, targ : Node2D = null):
+func configure(source : Node2D):
 	super.configure(source)
-	target = targ
+	target = get_tree().get_nodes_in_group("player")[0]
 
 func _process(delta):
 	if !target: 
